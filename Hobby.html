@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YangGuohao's Personal Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Indie Flower', cursive;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 2.2rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            font-size: 5.5rem;
+            margin-bottom: 50px;
+        }
+
+        h3, h4 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .slider {
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .slider img {
+            max-width: 60%;
+            height: auto;
+            margin: 0 auto;
+            display: none;
+            border: 5px solid #333;
+            border-radius: 10px;
+        }
+
+        .description {
+            font-size: 3rem;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .contact-info {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between; /* Align items to the left and right */
+            font-size: 1.5rem;
+        }
+
+        .footer-container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-container p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="container">
+        <a href="HomePage.html">Home Page</a>
+        <a href="BasicInformation.html">Basic Information</a>
+        <a href="Hobby.html">Hobby</a>
+        <a href="PersonalWork.html">Personal Work</a>
+        <a href="ContactMe.html">Contact me</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Hobby</h2>
+    <div class="description">Calligraphy</div>
+    <div class="slider">
+        <img src="calligraphy.jpg" alt="Calligraphy" style="display: block;">
+        <img src="basketball.jpg" alt="Basketball">
+        <img src="cook_1.jpg" alt="Cooking">
+        <img src="cook_2.jpg" alt="Cooking">
+    </div>
+    <h3>2024/2/11</h3>
+    <h4>By Rious_YangGuohao</h4>
+</div>
+
+<div class="footer-container">
+    <p>Contact Information: 📞 Telephone: 7322853508 | ✉️ Email: yanggu@kean.edu</p>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+    const descriptions = ['Calligraphy', 'Basketball', 'Cooking', 'Cooking'];
+    const descriptionElement = document.querySelector('.description');
+
+    function showSlide() {
+        slides.forEach((slide, index) => {
+            slide.style.display = 'none';
+            if (index === currentSlide) {
+                slide.style.display = 'block';
+                descriptionElement.textContent = descriptions[index];
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide();
+    }
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    showSlide(); // Initialize slider
+</script>
+
+</body>
+</html>
